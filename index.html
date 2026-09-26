@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dr. B. R. Ambedkar Digital Heritage Archive</title>
+  <meta name="description" content="AI-enabled Digital Heritage Archive & Institutional Knowledge Platform for Dr. B. R. Ambedkar writings, speeches, and Constituent Assembly debates at Dr. Ambedkar International Centre.">
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+  <!-- Editorial Top Navigation Ribbon -->
+  <header class="site-header">
+    <a href="#" class="brand-identity" id="brand-home-link">
+      <div class="brand-avatar-seal">
+        <img src="images/ambedkar-portrait.jpg" alt="Dr. B. R. Ambedkar" class="brand-avatar-img">
+      </div>
+      <div class="brand-logotype">Ambedkar Heritage <span>Archive</span></div>
+    </a>
+
+    <nav class="nav-pill-group" aria-label="Archive Sections">
+      <button class="nav-pill-btn active" data-target="pane-home">Overview</button>
+      <button class="nav-pill-btn" data-target="pane-search">Semantic Search</button>
+      <button class="nav-pill-btn" data-target="pane-graph">Knowledge Map</button>
+      <button class="nav-pill-btn" data-target="pane-timeline">Timeline</button>
+      <button class="nav-pill-btn" data-target="pane-ocr">Manuscript OCR</button>
+      <button class="nav-pill-btn" data-target="pane-media">Audio Vault</button>
+      <button class="nav-pill-btn" data-target="pane-chat">AI Scholar</button>
+    </nav>
+
+    <div class="header-meta-group">
+      <select id="global-lang-select" class="language-selector" aria-label="Language Selector">
+        <option value="english">English</option>
+        <option value="hindi">हिन्दी (Hindi)</option>
+        <option value="marathi">मराठी (Marathi)</option>
+        <option value="tamil">தமிழ் (Tamil)</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Main Application Content Container -->
+  <main class="content-wrapper">
+
+    <!-- PANE 1: Overview & Landmark Exhibits (Editorial Monograph Style) -->
+    <section id="pane-home" class="view-section active">
+      <div class="monograph-hero-showcase">
+        <div class="hero-editorial-col">
+          <span class="kicker-tag">ARCHIVAL EXHIBITION & DIGITAL MONOGRAPH</span>
+          <h1 class="hero-title">The Constitutional Thought & Speeches of Dr. B. R. Ambedkar</h1>
+          <p class="hero-abstract">A verified institutional repository preserving 22 volumes of published writings, landmark Constituent Assembly debates, rare manuscripts, and multi-lingual transcripts.</p>
+
+          <div class="hero-actions-cluster">
+            <button id="hero-explore-btn" class="btn-primary-pill">Inspect Primary Sources ›</button>
+            <button id="hero-chat-btn" class="btn-secondary-pill">AI Scholar Desk</button>
+          </div>
+
+          <div class="curation-stats-grid">
+            <div class="stat-cell">
+              <div class="stat-number">22</div>
+              <div class="stat-descriptor">Published Volumes</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">500+</div>
+              <div class="stat-descriptor">CAD Debates Indexed</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">100%</div>
+              <div class="stat-descriptor">Digitized & Verified</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-portrait-frame-col">
+          <div class="archival-portrait-card">
+            <div class="portrait-matting">
+              <img src="images/ambedkar-portrait.jpg" alt="Dr. Bhimrao Ramji Ambedkar (1891–1956)" class="hero-portrait-image">
+              <div class="portrait-watermark-stamp">DAIC • RESTORED MASTER</div>
+            </div>
+            <div class="portrait-plaque">
+              <div class="portrait-plaque-name">Dr. Bhimrao Ramji Ambedkar <span class="plaque-dates">(1891–1956)</span></div>
+              <div class="portrait-plaque-title">Chief Architect of the Constitution of India • First Law Minister</div>
+              <div class="portrait-plaque-caption">Ph.D. Columbia University • D.Sc. London School of Economics • Barrister (Gray's Inn)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Touch-Friendly Landmark Documents Gallery -->
+      <div class="gallery-container">
+        <div class="gallery-headline-row">
+          <div>
+            <h2 class="section-title">Featured Landmark Documents</h2>
+            <p class="section-desc">Swipe or scroll horizontally to inspect seminal texts, speeches, and legal draftings.</p>
+          </div>
+          <div class="gallery-arrows">
+            <button id="gallery-prev" class="arrow-btn" aria-label="Previous exhibit">‹</button>
+            <button id="gallery-next" class="arrow-btn" aria-label="Next exhibit">›</button>
+          </div>
+        </div>
+
+        <div class="cards-scroller" id="cards-viewport">
+          <div class="cards-flex-track" id="gallery-track">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Institutional Modules Grid -->
+      <div class="modules-grid">
+        <div class="module-card" data-target="pane-search">
+          <div class="module-icon-badge">🔍</div>
+          <h3 class="module-title">AI Semantic Search</h3>
+          <p class="module-description">Search by conceptual phrases or constitutional provisions across all 22 BAWS volumes and assembly speeches.</p>
+          <span class="module-action-link">Explore Archive ›</span>
+        </div>
+
+        <div class="module-card" data-target="pane-graph">
+          <div class="module-icon-badge">🕸️</div>
+          <h3 class="module-title">Knowledge Architecture</h3>
+          <p class="module-description">Interactive network graph connecting constitutional articles, economic treatises, and civil rights movements.</p>
+          <span class="module-action-link">Inspect Network ›</span>
+        </div>
+
+        <div class="module-card" data-target="pane-timeline">
+          <div class="module-icon-badge">⏱️</div>
+          <h3 class="module-title">Chronological Milestones</h3>
+          <p class="module-description">A curated horizontal timeline tracking Dr. Ambedkar's education, public service, and historical milestones (1891–1956).</p>
+          <span class="module-action-link">Open Timeline ›</span>
+        </div>
+
+        <div class="module-card" data-target="pane-ocr">
+          <div class="module-icon-badge">📄</div>
+          <h3 class="module-title">Manuscript OCR Studio</h3>
+          <p class="module-description">High-resolution facsimile digitization and automated Dublin Core metadata schema tagging for historical papers.</p>
+          <span class="module-action-link">Digitize Scans ›</span>
+        </div>
+
+        <div class="module-card" data-target="pane-media">
+          <div class="module-icon-badge">🎙️</div>
+          <h3 class="module-title">Audio Archival Vault</h3>
+          <p class="module-description">Restored BBC radio interviews, Constituent Assembly proceedings, and multi-lingual historical speeches.</p>
+          <span class="module-action-link">Listen to Vault ›</span>
+        </div>
+
+        <div class="module-card" data-target="pane-chat">
+          <div class="module-icon-badge">🤖</div>
+          <h3 class="module-title">Ambedkar AI Scholar</h3>
+          <p class="module-description">An institutional research desk providing verified answers and citations directly from the published writings.</p>
+          <span class="module-action-link">Start Consultation ›</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANE 2: Semantic Search & Explorer -->
+    <section id="pane-search" class="view-section">
+      <div class="search-header-container">
+        <h2 class="section-title">Semantic Archival Explorer</h2>
+        <p class="section-desc">Search by concept, constitutional article, or topic across published volumes and speeches.</p>
+
+        <div class="search-box-composite">
+          <input type="text" id="search-field" class="search-field-input" placeholder="Search e.g. 'Article 32', 'Social Democracy', 'Rupee', 'Mahad'...">
+          <button id="search-button" class="search-submit-btn">Search</button>
+        </div>
+
+        <div class="filter-pills-row" id="search-filter-pills">
+          <button class="category-filter-btn active" data-category="All">All Documents</button>
+          <button class="category-filter-btn" data-category="Writings & Speeches">Writings & Speeches</button>
+          <button class="category-filter-btn" data-category="Constituent Assembly Debates">Assembly Debates</button>
+          <button class="category-filter-btn" data-category="Economic Writings">Economics</button>
+          <button class="category-filter-btn" data-category="Constitutional Proposals">Proposals</button>
+          <button class="category-filter-btn" data-category="Speeches & Movement">Civil Rights</button>
+        </div>
+      </div>
+
+      <div class="records-grid" id="doc-results-container">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- PANE 3: Interactive Knowledge Graph -->
+    <section id="pane-graph" class="view-section">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 class="section-title">Knowledge Architecture & Linkages</h2>
+        <p class="section-desc">Visual network connecting constitutional provisions, landmark publications, and civil rights movements.</p>
+      </div>
+
+      <div class="graph-viewport-panel">
+        <canvas id="knowledge-graph-canvas"></canvas>
+
+        <div class="graph-legend-badge">
+          <strong>Network Entities:</strong>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#1C1917; margin-right:6px;"></span> Core Figure (Dr. Ambedkar)</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#0066CC; margin-right:6px;"></span> Constitutional Articles</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#059669; margin-right:6px;"></span> Civil Rights Movements</div>
+          <div><span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#B45309; margin-right:6px;"></span> Economics & Currency</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANE 4: Historical Timeline Revamp -->
+    <section id="pane-timeline" class="view-section">
+      <!-- Timeline Masthead & Stats Header -->
+      <div class="timeline-hero-masthead">
+        <div class="timeline-hero-text">
+          <div class="timeline-kicker-tag">
+            <span class="timeline-pulse-dot"></span>
+            HISTORICAL CHRONOLOGY • 1891–1956
+          </div>
+          <h2 class="timeline-headline">The Archival Odyssey of Babasaheb Ambedkar</h2>
+          <p class="timeline-abstract">Six decades of revolutionary scholarship, civil rights mobilizations, constitutional architecture, and moral renaissance mapped across primary historical evidence.</p>
+        </div>
+
+        <div class="timeline-meta-stats">
+          <div class="t-stat-card">
+            <span class="t-stat-val" id="t-stat-count">20</span>
+            <span class="t-stat-lbl">Milestones</span>
+          </div>
+          <div class="t-stat-card">
+            <span class="t-stat-val">6</span>
+            <span class="t-stat-lbl">Historical Eras</span>
+          </div>
+          <div class="t-stat-card">
+            <span class="t-stat-val">65</span>
+            <span class="t-stat-lbl">Years Mapped</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls Deck: Eras, Categories, Search, View Mode & Chronicle Audio Tour -->
+      <div class="timeline-controls-deck">
+        <!-- Top Row: Eras -->
+        <div class="timeline-era-pills" id="timeline-era-pills">
+          <button class="t-era-pill active" data-era="all">All Eras (1891–1956)</button>
+          <button class="t-era-pill" data-era="early-life">1891–1912: Formative</button>
+          <button class="t-era-pill" data-era="education">1913–1923: Columbia & London</button>
+          <button class="t-era-pill" data-era="civil-rights">1924–1936: Civil Rights</button>
+          <button class="t-era-pill" data-era="labour-governance">1937–1946: Labour & Governance</button>
+          <button class="t-era-pill" data-era="constitution">1947–1950: Constitution</button>
+          <button class="t-era-pill" data-era="legacy">1951–1956: Navayana & Legacy</button>
+        </div>
+
+        <!-- Middle Row: Search & Utilities & Layout Switcher -->
+        <div class="timeline-action-toolbar">
+          <div class="t-search-wrapper">
+            <svg class="t-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="timeline-search-input" class="timeline-search-field" placeholder="Search milestones (e.g. 'Constitution', 'Mahad', 'Columbia', 'Labour')...">
+            <span id="timeline-count-badge" class="timeline-filter-count">20 Milestones</span>
+          </div>
+
+          <div class="timeline-view-toggles">
+            <!-- Autoplay / Audio Journey Button -->
+            <button id="timeline-autoplay-btn" class="t-action-btn autoplay-btn" title="Autoplay chronological tour with spoken narration">
+              <span class="btn-play-icon">▶</span>
+              <span class="btn-text">Audio Chronicle Tour</span>
+              <span class="autoplay-pulse-ring"></span>
+            </button>
+
+            <!-- Layout Mode: TimelineJS Stage vs Ribbon vs Editorial Chronicle -->
+            <div class="t-layout-group">
+              <button class="t-layout-btn active" id="btn-layout-timelinejs" data-layout="timelinejs" title="TimelineJS Stage & Chrono-Tape">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="11" rx="2"></rect><line x1="2" y1="18" x2="22" y2="18"></line><circle cx="12" cy="18" r="2"></circle></svg>
+                <span>Stage & Tape</span>
+              </button>
+              <button class="t-layout-btn" id="btn-layout-ribbon" data-layout="ribbon" title="Horizontal Cards Stream">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"></rect><rect x="14" y="3" width="7" height="18" rx="1"></rect></svg>
+                <span>Cards Stream</span>
+              </button>
+              <button class="t-layout-btn" id="btn-layout-editorial" data-layout="editorial" title="Vertical Editorial Chronicle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="7" rx="1"></rect><rect x="3" y="14" width="18" height="7" rx="1"></rect></svg>
+                <span>Chronicle</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decade Quick-Jump Ruler -->
+        <div class="decade-ruler-bar" id="decade-ruler-bar">
+          <span class="ruler-label">Decade:</span>
+          <button class="ruler-chip active" data-decade="all">All</button>
+          <button class="ruler-chip" data-decade="1890s">1890s</button>
+          <button class="ruler-chip" data-decade="1900s">1900s</button>
+          <button class="ruler-chip" data-decade="1910s">1910s</button>
+          <button class="ruler-chip" data-decade="1920s">1920s</button>
+          <button class="ruler-chip" data-decade="1930s">1930s</button>
+          <button class="ruler-chip" data-decade="1940s">1940s</button>
+          <button class="ruler-chip" data-decade="1950s">1950s</button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: TIMELINEJS DUAL-DECK (STAGE + CHRONO-TAPE) -->
+      <div id="timeline-stage-container" class="timelinejs-container active-view">
+        <!-- Upper Deck: The Interactive Slide Stage -->
+        <div class="timelinejs-stage-wrapper">
+          <button id="stage-prev-btn" class="stage-nav-arrow stage-nav-prev" aria-label="Previous milestone (Swipe right or press Left arrow)">‹</button>
+          
+          <div class="timelinejs-stage-viewport" id="stage-viewport">
+            <div class="timelinejs-slide-deck" id="stage-slide-deck">
+              <!-- Dynamically populated active milestone slide with touch swipe physics -->
+            </div>
+          </div>
+
+          <button id="stage-next-btn" class="stage-nav-arrow stage-nav-next" aria-label="Next milestone (Swipe left or press Right arrow)">›</button>
+        </div>
+
+        <!-- Stage Slide Pagination Dots (Touch Indicators) -->
+        <div class="stage-pagination-strip" id="stage-pagination-strip"></div>
+
+        <!-- Lower Deck: The Chrono-Tape (Timeline Ruler & Flags) -->
+        <div class="timelinejs-tape-wrapper">
+          <div class="tape-controls-header">
+            <div class="tape-hint">
+              <span class="touch-pill-icon">👆</span>
+              <span><strong>Touch Navigation:</strong> Swipe stage above or drag chrono-tape below • Tap flag to inspect</span>
+            </div>
+            <div class="tape-zoom-cluster">
+              <button class="tape-zoom-btn" id="tape-zoom-out" title="Zoom out timeline scale">−</button>
+              <span class="tape-zoom-level" id="tape-zoom-label">100%</span>
+              <button class="tape-zoom-btn" id="tape-zoom-in" title="Zoom in timeline scale">+</button>
+            </div>
+          </div>
+
+          <!-- Synchronized Scrollable Tape Viewport -->
+          <div class="timelinejs-tape-viewport" id="tape-viewport">
+            <div class="timelinejs-tape-track" id="tape-track">
+              <!-- Top Layer: Era Color Bands -->
+              <div class="tape-era-bands-row" id="tape-era-bands"></div>
+
+              <!-- Middle Layer: Year Ticks & Decade Markers -->
+              <div class="tape-ruler-ticks-row" id="tape-ruler-ticks"></div>
+
+              <!-- Bottom Layer: Milestone Marker Flags -->
+              <div class="tape-marker-flags-row" id="tape-marker-flags"></div>
+
+              <!-- Active Cursor Spotlight Line -->
+              <div class="tape-active-cursor" id="tape-active-cursor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: HORIZONTAL CARDS STREAM -->
+      <div id="timeline-ribbon-container" class="timeline-ribbon-container" style="display:none;">
+        <div class="timeline-ribbon-header-row">
+          <div class="ribbon-hint">
+            <span class="swipe-gesture-hint">👆 Drag or swipe horizontally • Arrow keys enabled</span>
+          </div>
+          <div class="ribbon-arrows">
+            <button id="timeline-prev-btn" class="t-nav-arrow" aria-label="Previous milestone">‹</button>
+            <button id="timeline-next-btn" class="t-nav-arrow" aria-label="Next milestone">›</button>
+          </div>
+        </div>
+
+        <div class="timeline-viewport" id="timeline-viewport">
+          <div class="timeline-milestones-track" id="timeline-milestones-track">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Interactive Time Scrubber Bar -->
+        <div class="timeline-scrubber-wrapper">
+          <div class="scrubber-track-line" id="scrubber-track-line">
+            <!-- Dynamic scrubber nodes populated by app.js -->
+          </div>
+          <div class="scrubber-progress-fill" id="scrubber-progress-fill"></div>
+          <div class="scrubber-tooltip" id="scrubber-tooltip"></div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: VERTICAL EDITORIAL CHRONICLE -->
+      <div id="timeline-editorial-container" class="timeline-editorial-container" style="display:none;">
+        <div class="editorial-spine-line"></div>
+        <div class="editorial-stream" id="timeline-editorial-stream">
+          <!-- Dynamically populated by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PANE 5: Manuscript OCR Studio -->
+    <section id="pane-ocr" class="view-section">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 class="section-title">Manuscript Digitization & Extraction</h2>
+        <p class="section-desc">High-fidelity optical character recognition and automated Dublin Core metadata tagging.</p>
+      </div>
+
+      <!-- Historical Facsimile Quick Samples -->
+      <div class="ocr-sample-bar">
+        <span class="ocr-sample-title">Select Primary Facsimile:</span>
+        <button class="ocr-sample-btn active" data-sample="MAN-001">
+          <img src="images/ambedkar-signing-constitution.jpg" alt="Article 14 Draft" class="ocr-sample-thumb">
+          <span>Draft Constitution Article 14 (1948)</span>
+        </button>
+        <button class="ocr-sample-btn" data-sample="MAN-002">
+          <img src="images/ambedkar-reading-library.jpg" alt="Du Bois Letter" class="ocr-sample-thumb">
+          <span>W. E. B. Du Bois Correspondence (1946)</span>
+        </button>
+      </div>
+
+      <div class="ocr-split-container">
+        <div class="dropzone-upload-box" id="ocr-dropzone">
+          <div class="ocr-facsimile-preview" id="ocr-facsimile-box">
+            <img src="images/ambedkar-signing-constitution.jpg" alt="Facsimile preview" id="ocr-preview-img" class="ocr-preview-img">
+            <div class="ocr-scanline-fx" id="ocr-scanline"></div>
+          </div>
+          <p style="font-size: 13px; color: var(--ink-secondary); margin-top: 10px;">Click to upload custom PNG, JPG, or PDF archival facsimile.</p>
+          <button class="btn-secondary-pill" style="margin-top: 0.25rem;">Choose File</button>
+          <input type="file" id="ocr-file-input" style="display:none;" accept="image/*,.pdf">
+        </div>
+
+        <div class="ocr-result-editor">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="font-size: 16px; font-weight: 600;">Digitized Transcription</h3>
+            <span id="ocr-status-tag" style="font-family: var(--font-mono); font-size: 12px; color: var(--accent-blue); font-weight: 500;">Ready</span>
+          </div>
+
+          <textarea id="ocr-output-text" class="transcription-area" placeholder="AI OCR transcription will appear here..."></textarea>
+
+          <div style="display:flex; gap: 8px; justify-content:flex-end;">
+            <button class="btn-secondary-pill" id="ocr-export-btn" style="padding: 8px 16px; font-size: 13px;">Export Dublin Core</button>
+            <button class="btn-primary-pill" id="ocr-save-btn" style="padding: 8px 18px; font-size: 13px;">Save to Repository</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANE 6: Audio Archival Vault -->
+    <section id="pane-media" class="view-section">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 class="section-title">Audio & Historical Recordings Vault</h2>
+        <p class="section-desc">Restored historical broadcasts and speeches in lossless archival fidelity.</p>
+      </div>
+
+      <div class="records-grid">
+        <div class="record-card">
+          <div class="record-media-cover">
+            <img src="images/ambedkar-delhi-1948.jpg" alt="BBC Broadcast 1953" class="record-media-img" loading="lazy">
+            <span class="record-media-duration-tag">08:45</span>
+          </div>
+          <div>
+            <span class="card-category-pill">BBC Archive • 1953</span>
+            <h3 class="record-title">BBC Radio Interview: Dr. Ambedkar on Parliamentary Democracy</h3>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-tertiary); margin: 6px 0;">Location: London Studio • Restored Audio</p>
+            <p class="record-abstract">Historical radio broadcast where Dr. Ambedkar discusses democratic institutions, economic equality, and parliamentary governance.</p>
+          </div>
+          <div class="record-footer-actions">
+            <button class="btn-primary-pill audio-play-trigger" data-title="BBC Broadcast 1953" style="padding: 8px 18px; font-size: 13px;">Listen to Broadcast</button>
+          </div>
+        </div>
+
+        <div class="record-card">
+          <div class="record-media-cover">
+            <img src="images/ambedkar-constitution-presentation.jpg" alt="CAD Newsreel 1949" class="record-media-img" loading="lazy">
+            <span class="record-media-duration-tag">14:20</span>
+          </div>
+          <div>
+            <span class="card-category-pill">CAD Newsreel • 1949</span>
+            <h3 class="record-title">Constituent Assembly Final Session (Nov 25, 1949)</h3>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-tertiary); margin: 6px 0;">Location: Assembly Hall, New Delhi • Official Record</p>
+            <p class="record-abstract">Historic newsreel recording Dr. Ambedkar's final presentation of the Draft Constitution of India.</p>
+          </div>
+          <div class="record-footer-actions">
+            <button class="btn-primary-pill audio-play-trigger" data-title="Constituent Assembly Final Session 1949" style="padding: 8px 18px; font-size: 13px;">Listen to Audio</button>
+          </div>
+        </div>
+
+        <div class="record-card">
+          <div class="record-media-cover">
+            <img src="images/ambedkar-1950.jpg" alt="Dhamma Deeksha 1956" class="record-media-img" loading="lazy">
+            <span class="record-media-duration-tag">11:15</span>
+          </div>
+          <div>
+            <span class="card-category-pill">Nagpur Archive • 1956</span>
+            <h3 class="record-title">Why I Chose Buddha and His Dhamma</h3>
+            <p style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-tertiary); margin: 6px 0;">Location: Deekshabhoomi, Nagpur • Historic Address</p>
+            <p class="record-abstract">Address detailing moral philosophy, rationality, and human dignity in the Navayana revival.</p>
+          </div>
+          <div class="record-footer-actions">
+            <button class="btn-primary-pill audio-play-trigger" data-title="Dhamma Speech 1956" style="padding: 8px 18px; font-size: 13px;">Listen to Audio</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANE 7: AI Scholar Assistant -->
+    <section id="pane-chat" class="view-section">
+      <div style="text-align:center; max-width:680px; margin: 0 auto 2rem;">
+        <h2 class="section-title">Ambedkar AI Scholar</h2>
+        <p class="section-desc">An institutional research desk providing verified citations grounded directly in the 22 published volumes.</p>
+      </div>
+
+      <div class="scholar-chat-shell">
+        <div class="chat-header-bar">
+          <div class="chat-header-avatar-circle">
+            <img src="images/ambedkar-portrait.jpg" alt="Dr. B. R. Ambedkar" class="chat-header-avatar-img">
+          </div>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Scholar Consultation Desk</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-tertiary);">Verified institutional corpus reference • 22 BAWS Volumes</div>
+          </div>
+        </div>
+
+        <div class="chat-messages-scroll" id="chat-feed">
+          <div class="chat-message-row assistant">
+            <div class="chat-msg-avatar-wrap">
+              <img src="images/ambedkar-portrait.jpg" alt="Dr. Ambedkar Scholar" class="chat-msg-avatar-img">
+            </div>
+            <div class="message-bubble assistant">
+              Greetings. I am the archival scholar assistant for Dr. B. R. Ambedkar's digital works. How can I assist your constitutional and historical research today?
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-prompt-pills-bar">
+          <button class="category-filter-btn chat-preset-pill" style="font-size: 12px; padding: 4px 12px;">Article 32 & Constitutional Remedies</button>
+          <button class="category-filter-btn chat-preset-pill" style="font-size: 12px; padding: 4px 12px;">Origin of Reserve Bank of India</button>
+          <button class="category-filter-btn chat-preset-pill" style="font-size: 12px; padding: 4px 12px;">Social Democracy vs Political Democracy</button>
+        </div>
+
+        <div class="chat-input-controls">
+          <input type="text" id="chat-input-box" class="search-field-input" placeholder="Ask a question about Dr. Ambedkar's writings...">
+          <button id="chat-submit-btn" class="btn-primary-pill" style="padding: 8px 20px; font-size: 13px;">Send</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       Apple-Style Detail Bottom Sheet Drawer (Vaul Gesture System)
+       ========================================================================== -->
+  <div id="detail-sheet-backdrop" class="drawer-backdrop-scrim" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="drawer-surface-sheet" id="sheet-window">
+      <!-- Tactile Drag Handle -->
+      <div class="drawer-grab-zone" id="sheet-drag-handle" title="Drag down to close">
+        <div class="drawer-pill-bar"></div>
+      </div>
+
+      <!-- Sheet Header -->
+      <div class="drawer-header-pane">
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom: 6px;">
+            <span id="sheet-category-badge" class="card-category-pill">Category</span>
+            <span id="sheet-year-badge" style="font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--ink-secondary);">1948</span>
+          </div>
+          <h2 id="sheet-document-title" class="drawer-document-title">Document Title</h2>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px;">
+          <!-- Quick Language Switcher Pills -->
+          <div style="display:flex; gap:4px; background:var(--surface-muted); padding:3px; border-radius:9999px;">
+            <button class="category-filter-btn sheet-lang-btn active" data-lang="english" style="padding:3px 9px; font-size:11px;">EN</button>
+            <button class="category-filter-btn sheet-lang-btn" data-lang="hindi" style="padding:3px 9px; font-size:11px;">हिन्दी</button>
+            <button class="category-filter-btn sheet-lang-btn" data-lang="marathi" style="padding:3px 9px; font-size:11px;">मराठी</button>
+            <button class="category-filter-btn sheet-lang-btn" data-lang="tamil" style="padding:3px 9px; font-size:11px;">தமிழ்</button>
+          </div>
+          <button id="sheet-close-btn" class="drawer-dismiss-btn" aria-label="Close dialog">&times;</button>
+        </div>
+      </div>
+
+      <!-- Sheet Scrollable Transcript Body -->
+      <div class="drawer-reading-content" id="sheet-transcript-body">
+        <!-- Loaded dynamically -->
+      </div>
+
+      <!-- Audio Narration Ribbon -->
+      <div class="drawer-audio-ribbon">
+        <div class="audio-controls-group">
+          <button id="tts-play-toggle" class="btn-primary-pill" style="padding: 8px 18px; font-size: 13px;">
+            <span id="tts-icon">▶</span> <span id="tts-btn-label">Listen to Narration</span>
+          </button>
+
+          <div class="equalizer-indicator" id="sheet-equalizer" aria-hidden="true">
+            <span class="eq-column"></span>
+            <span class="eq-column"></span>
+            <span class="eq-column"></span>
+            <span class="eq-column"></span>
+          </div>
+
+          <span id="tts-status-indicator" style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-secondary);">Ready</span>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:8px;">
+          <label for="tts-voice-dropdown" style="font-size: 12px; color: var(--ink-secondary);">Voice:</label>
+          <select id="tts-voice-dropdown" class="language-selector" style="padding: 4px 8px; font-size: 12px;"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <p>© 2026 Dr. Ambedkar International Centre (DAIC), New Delhi • Central Institutional Digital Heritage Repository</p>
+    <p style="margin-top: 4px; font-family: var(--font-mono); font-size: 11px;">Typography: Plus Jakarta Sans • Newsreader Optical Serif • JetBrains Mono</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data.js?v=4"></script>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

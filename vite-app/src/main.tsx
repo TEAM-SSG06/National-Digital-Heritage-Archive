@@ -1,0 +1,18 @@
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+
+import "./index.css"
+import App from "./App.tsx"
+import { ThemeProvider } from "@/components/theme-provider.tsx"
+
+// Force light mode – clear any previously stored dark preference
+localStorage.setItem("theme", "light")
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <ThemeProvider defaultTheme="light" storageKey="theme">
+      <App />
+    </ThemeProvider>
+  </StrictMode>
+)
+
